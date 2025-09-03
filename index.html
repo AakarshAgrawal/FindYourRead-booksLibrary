@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="search">
+                <input type="text" class="bar" placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="profile">
+                <i class="fa-solid fa-user"></i>
+                <p>Aakarsh Agrawal</p>
+            </div>
+            <button id="new-book-btn" type="button">New Book</button>
+            <button id="filters-btn" type="button">Filter</button>
+        </div>
+        <div class="sidebar">
+            <div class="branding">
+                <img src="./assets/library-logo.svg" alt="library-logo">
+                <div class="branding-name">Find Your Read</div>
+            </div>
+            <div class="navigation">
+                <div><img src="./assets/home-icon.svg">home</div>
+                <div><img src="./assets/profile-icon.svg">Profile</div>
+                <div><img src="./assets/bookmark-icon.svg">Bookmark</div>
+                <div><img src="./assets/wishlist-icon.svg">Wishlist</div>
+                <div><img src="./assets/trash-icon.svg">Removed Books</div>
+                <br><br>
+                <div><img src="./assets/settings-icon.svg">Settings</div>
+                <div><img src="./assets/support-icon.svg">Support</div>
+                <div><img src="./assets/privacy-icon.svg">Privacy</div>
+                <div><img src="./assets/logout-icon.svg">Logout</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <template class="card-template">
+                <div class="card">
+                    <div class="picture">
+                        <img src="./assets/book-icon.svg" alt="book-icon">
+                    </div>
+                    <div class="info">
+                        <div class="top">
+                            <div class="title"></div>
+                            <div class="author">By <span></span></div>
+                        </div>
+                        <div class="middle">
+                            <div class="pages">
+                                <div class="value"></div>
+                                <div class="label">Pages</div>
+                            </div>
+                            <div class="genre">
+                                <div class="value"></div>
+                                <div class="label">Genre</div>
+                            </div>
+                            <div class="release">
+                                <div class="value"></div>
+                                <div class="label">Release</div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <button class="read" type="button"></button>
+                            <button class="remove" type="button">Remove</button>
+                        </div>
+                    </div>
+                </div>
+
+            </template>
+            <h1 class="title">Unread books</h1>
+            <div class="unread-books"></div>
+                
+            <h1 class="title">Read books</h1>
+            <div class="read-books">
+            </div>
+        </div>
+        <dialog id="new-book-dialog">
+            <form method="dialog" id="new-book-form">
+            <fieldset> 
+                <legend>New Book</legend>
+                <div>Required Fields are followed by <span aria-label="required">*</span></div>
+
+                <label for="title">
+                    <div class="label-text">Title <span aria-label="required">*</span></div>
+                    <input type="text" id="book-title" name="title" maxlength="40" required> 
+                </label>
+
+                <label for="Author">
+                    <div class="label-text">Author <span aria-label="required">*</span></div>
+                    <input type="text" id="book-author" name="author" maxlength="40" required> 
+                </label>
+
+                <label for="Genre">
+                    <div class="label-text">Genre</div>
+                    <select name="genre" id="book-genre">
+                         <option>Fiction</option>
+                            <option>Non-Fiction</option>
+                            <option>Sci-Fi</option>
+                            <option>Fantasy</option>
+                            <option>Romance</option>
+                            <option>Mistery</option>
+                            <option>Thriller</option>
+                            <option>Historical</option>
+                            <option>Horror</option>
+                            <option>Biography</option>
+                            <option>Adventure</option>
+                            <option>Self-Help</option>   
+                    </select>
+                </label>
+                <div class="pages-release-box">
+                    <label for="pages">
+                        <div class="label-text">Pages</div>
+                        <input type="number" id="book-pages" name="pages" min="1" max="99999">     
+                    </label>
+
+                    <label for="release">
+                        <div class="label-text">Release Year</div>
+                        <input  type="number" id="book-release" name="release" min="1" max="2025">
+                    </label>
+                </div>
+
+                <label for="book-cover">
+                    <div class="label-text">Book Cover Image</div>
+                   <input type="file" name="cover"  value="cover" id="book-cover" accept="image/jpeg, image/png">
+                </label>
+                
+                <label for="checkbox">
+                <input type="checkbox" name="read" value="read" id="book-read">
+                <span class="label-text">Already read</span>
+                </label>
+            </fieldset>
+
+              <div class="buttons">
+                    <button value="ok-button">Add book</button>
+                    <button value="cancel-button" formnovalidate>Cancel</button>
+                </div> 
+            </form>
+        </dialog>
+    </div>
+</body>
+</html>
