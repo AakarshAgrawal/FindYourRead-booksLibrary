@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
 </head>
 <body>
     <div class="container">
         <div class="header">
             <div class="search">
                 <input type="text" class="bar" placeholder="Search">
-                <i class="fa-solid fa-magnifying-glass"></i>
+               <img src="./assets/search-icon.svg" class="icon">
             </div>
             <div class="profile">
                 <i class="fa-solid fa-user"></i>
-                <p>Aakarsh Agrawal</p>
+                <div class="name">Aakarsh Agrawal</div>
             </div>
             <button id="new-book-btn" type="button">New Book</button>
-            <button id="filters-btn" type="button">Filter</button>
+            <button id="filters-btn" type="button"><img src="./assets/filter-list-icon.svg">Filter</button>
         </div>
         <div class="sidebar">
             <div class="branding">
@@ -144,5 +145,6 @@
             </form>
         </dialog>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
